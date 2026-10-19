@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BridgeCare | Bridge Inspection System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h1>🌉 BridgeCare</h1>
+        <span>Digital Bridge Inspection System</span>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <p class="tag">SMART INFRASTRUCTURE MANAGEMENT</p>
+            <h2>Bridge Maintenance Dashboard</h2>
+            <p>
+                Manage inspection records, track reported defects,
+                and monitor repair progress in one place.
+            </p>
+        </section>
+
+        <!-- Dashboard statistics -->
+        <section class="stats">
+            <article class="card">
+                <p>Total Bridges</p>
+                <h3 id="bridges">0</h3>
+            </article>
+
+            <article class="card">
+                <p>Inspections Recorded</p>
+                <h3 id="inspections">0</h3>
+            </article>
+
+            <article class="card">
+                <p>Reported Defects</p>
+                <h3 id="defects">0</h3>
+            </article>
+
+            <article class="card">
+                <p>Repairs Pending</p>
+                <h3 id="repairs">0</h3>
+            </article>
+        </section>
+
+        <!-- Add or edit inspection form -->
+        <section class="panel form-panel">
+            <h2 id="form-heading">➕ Add New Inspection</h2>
+            <p class="note">
+                Enter the details of a recorded inspection.
+            </p>
+
+            <form id="inspection-form">
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="bridge-name">Bridge Name</label>
+                        <input
+                            type="text"
+                            id="bridge-name"
+                            placeholder="e.g. River Bridge D"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="inspection-date">Inspection Date</label>
+                        <input
+                            type="date"
+                            id="inspection-date"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="record-status">Record Status</label>
+                        <select id="record-status" required>
+                            <option value="Reviewed">Reviewed</option>
+                            <option value="Follow-up pending">
+                                Follow-up pending
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="field">
+                    <label for="observations">
+                        Inspection Observations
+                    </label>
+                    <textarea
+                        id="observations"
+                        rows="3"
+                        placeholder="Describe the recorded observations..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Add Inspection
+                </button>
+
+                <p
+                    id="form-message"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+            </form>
+        </section>
+
+        <!-- Saved inspection records -->
+        <section class="panel">
+            <h2>Recent Inspection Records</h2>
+            <p class="note">
+                Student project demonstration records only.
+                These entries are not professional safety assessments.
+            </p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bridge & Observations</th>
+                            <th>Inspection Date</th>
+                            <th>Record Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="record-list">
+                        <tr>
+                            <td colspan="4" style="text-align: center;">
+                                Loading inspection records...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            BridgeCare Student Project · Educational Prototype Only
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
